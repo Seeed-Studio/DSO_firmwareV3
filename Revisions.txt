@@ -1,0 +1,153 @@
+BenF APP V3.61 - 2011.02.26
+* Invert duty cycle when using falling edge trigger
+* Add separate controls for buffer priority mode and fast/normal sampling speed
+* Adjust trigger position subject to buffer priority
+* Fix issue with FIT when in fast sampling  mode
+* Add option to reset to factory defaults
+* Updated firmware users guide
+
+BenF APP V3.60 - 2011.02.17
+* Support loading of XML files for primary and reference channel
+* Set DSO parameters on XML import (from XML profile section)
+* Add sampling rate to XML profile section
+* Support reference waveform resizing
+* Reference waveform increased from 300 points to 1024 points
+* Remove support for DAT reference files (replaced with XML)
+* Add fast sampling mode (10 times faster than standard mode)
+* Force fast sampling when in real-time scan mode
+* Add high/low pulse width measurement
+* Modified behavior and appearance of buffer position marker
+* Updated firmware users guide
+
+BenF APP V3.52 - 2011.02.04
+* Tune precision to accuracy (reduce measurement fluctuations)
+* Change to use 6 range gain calibration (recalibration required)
+* Improved arithmetic precision across V/Div's
+* Improved gain coherence across T/Div's
+* Improved accuracy for Gnd Pos calibration
+* Display gain calibration as % of full range
+* Make saved reference waveform the active reference
+* Adjust GndPos in steps of 5
+* Display Gnd Pos level (-95 to +95)
+* Updated firmware users guide
+
+BenF LIB V3.52 - 2011.02.03
+* Set power-on vertical bias offset to 50%
+* Adjust ADC prescaler
+
+BenF APP V3.51 - 2011.01.25
+* Automatic ground level calibration
+* Allow off screen trigger level
+* Pressing B for Gnd Pos will reset position to vertical center
+* Updated firmware users guide
+
+BenF APP V3.50 - 2011.01.20
+* Support waveform resizing (zoom in/out)
+* Add vertical scroll capability
+* Add under/over voltage indicator (V/Div turns red)
+* Fix issues with static display of waveforms when in SCAN mode
+* Increased numeric precision (XML val, Vpp, Vmin, Vmax, Vavg)
+* Updated firmware users guide
+
+BenF APP V3.43 - 2011.01.09
+* Fix issue with inaccurate sample time interval for 2s/Div and 10s/Div
+* Adjusted logic for trigger icon coloring (always go red when trigger absent)
+* Updated firmware users guide
+
+BenF APP V3.42 - 2011.01.02
+* Support SD card hot swap
+* Updated firmware users guide
+
+BenF LIB V3.42 - 2011.01.02
+* Trigger external interrupt when SD card inserted
+
+BenF APP V3.41 - 2010.12.23
+* Support loading (profile, waveform) from arbitrary named files
+* Allow sensitivity lines to remain visible when adjusting trigger level
+* Cancel FIT mode (change to AUTO) when manually adjusting V/Div, T/Div or trigger level
+* Updated ReadMe
+
+BenF APP V3.40 - 2010.12.16
+* Increased max sampling rate from 857ks/s to 1Ms/s
+* Add measurement for pulse count (count of low-to-high transitions)
+* Reconfigure PA1 to analog-in if connected to PA0 (digital pullup conflict with PA0/Ain for V2 owners)
+* Adjusted levels for battery state (full >= 3.50, 3.50 > half >= 3.33, 3.33 > low >= 3.16 , empty < 3.16)
+* Calculate measurements in scan mode
+* Add support for XML export when in scan mode
+* Adjusted AUTO mode trigger timer (exclude pre-fetch time)
+* Adjusted red trigger icon coloring (when scanning for trigger only)
+* Reuse LIB stack memory segment in  APP
+* Increased sampling depth from 3072 to 4098
+* Adjusted FIT mode T/Div sensititivity (prevent osscillation)
+* Updated ReadMe
+
+BenF LIB V3.40 - 2010.12.11
+* Changed icons for edge triggers and delta
+
+BenF APP V3.33 - 2010.12.11
+* Fix issue with calibrated gain not being restored after a power cycle
+
+BenF APP V3.32 - 2010.12.01
+* Fix issue with gain not settable for some ranges
+* Fix issue with time cursor offset error
+* Swap left/right keys for T/Div and V/Div (change to waveform centric)
+* Adjust duty cycle subject to HW V1/V2 differences
+* Display detected HW version (V1 or V2) on startup screen
+
+BenF APP V3.31 - 2010.11.30
+* Fix issue with unable to select 1MHz output frequency
+* Fix issue with AUTO trigger in post priority mode
+
+BenF APP V3.30 - 2010.11.28
+* Use interpolated waveform drawing for narrow T/div's (less equal 20us)
+* Documentation on FILExxx.DAT reference export/import format added to readme
+* Tuned FIT mode for faster response and more accurate scale selections
+* Made AC measurements (Vrms and Duty) calculations relative to Vavg
+* Trigger position preserved across V/Div and T/div changes
+* Support screen capture with measurements (select ME and press B or long M)
+* Support fine tuning of output frequency (3-digits, range 10Hz-1MHz)
+* Option to specify duty-cycle (PWM) for output frequency in 1% increments from fully-on to fully-off
+* Added support for full calibration (separate offset and gain for all ranges)
+* Added option to set sampling buffer usage priority (pre/post equal split or post priority)
+* Changed LIB/APP interface to use runtime function pointer resolve through interrupt vector
+* Changed to new extended profile format
+* Updated ReadMe
+
+BenF LIB V3.30 - 2010.11.28
+* Changed LIB/APP interface to use runtime function pointer resolve through interrupt vector
+* Added APP detect with version control
+
+BenF APP V3.21 - 2010.11.23
+* Fix issue with incorrect display of trigger position when T/div less equal 20us
+* Fix issue with incorrect "Write Err" message when saving profile and reference files
+
+BenF APP V3.20 - 2010.11.21
+* Added support for SD directory and file creation (FAT16 and FAT32)
+* Removed template files from distribution (no longer needed)
+* Snapshots of the full DSO sampling buffer can be exported to XML files
+* Per category file limit extended from 255 to 999
+* File sequence numbers default to the highest number used plus one within each category
+* File load functions will limit choice of names to existing files only
+* File save functions will display existing file names with the color red
+* A progress indicator is displayed when saving bitmap images and Xml files
+* Option to configure grid light intensity (8 levels) added to menu group OT
+* Added low end 0.2V scale for 10x attenuation probes
+* Loss of trigger will show as red colored trigger indicator (top left rising/falling symbol)
+* Updated ReadMe
+
+BenF LIB V3.02 - 2010.11.21
+* Add a verification/retry step to SD card initialization
+
+BenF APP V3.12 - 2010.11.15
+* Fix issue with incorrect range calibration
+
+BenF APP V3.11 - 2010.11.08
+* Fix issue with calibrate range displaying 0.x% for 10.x%
+
+BenF APP V3.10 - 2010.11.08
+
+* Improved SD card compatibility
+* Support two point basic unit calibration
+* FI menu group will now default to Save Img
+* Readme and revision file added to distribution
+* Added template files to distribution
