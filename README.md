@@ -1,5 +1,6 @@
 DSO_firmwareV3
 ==============
+This firmware is developed by BenF. It is open-sourced with free license but the copyright is reserved by the author BenF.
 
 
 
